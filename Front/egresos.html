@@ -9,15 +9,16 @@
 <body>
 
   <header class="header">
-    <h1>Gestión de Egresos</h1>
-    <a href="movimiento.html"><button class="btn"> Salir de tablas</button></a>
+    <div class="header-content">
+      <h1>Gestión de Egresos</h1>
+      <a href="movimiento.html"><button class="btn">Salir</button></a>
+    </div>
   </header>
 
   <main class="main-container">
-    <!-- Formulario de egreso -->
     <section class="form-section">
       <div class="form-grid">
-        <!-- Tipo y Turno -->
+
         <div class="form-item">
           <label>Tipo:</label>
           <p>Egresos</p>
@@ -31,7 +32,6 @@
           </select>
         </div>
 
-        <!-- Movimiento -->
         <div class="form-item">
           <label>Movimiento de:</label>
           <select id="movimiento">
@@ -41,13 +41,20 @@
           </select>
         </div>
 
-        <!-- Monto -->
         <div class="form-item">
           <label>Monto:</label>
           <input type="number" id="monto" placeholder="Ingrese el monto">
         </div>
 
-        <!-- Detalle -->
+        <div class="form-item">
+          <label>Movimiento realizado por:</label>
+          <select id="realizadoPor">
+            <option value="Admin">Admin</option>
+            <option value="Cajero 1">Cajero 1</option>
+            <option value="Cajero 2">Cajero 2</option>
+          </select>
+        </div>
+
         <div class="form-item form-full">
           <label>Detalle:</label>
           <textarea id="detalle" placeholder="Detalles del egreso"></textarea>
@@ -64,14 +71,13 @@
       </div>
     </section>
 
-    <!-- Pila de movimientos -->
     <aside class="pila-section">
       <h2>Pila de Movimientos</h2>
 
       <div class="movimiento-box">
         <h3>Por enviar a la DB</h3>
         <div id="movimientosPendientes" class="movimientos-container">
-          <!-- Movimientos pendientes -->
+          <!-- Pendientes -->
         </div>
         <button class="btn enviar-db">Enviar a la DB</button>
       </div>
@@ -79,7 +85,7 @@
       <div class="movimiento-box">
         <h3>Movimientos ya agregados</h3>
         <div id="movimientosAgregados" class="movimientos-container">
-          <!-- Movimientos agregados -->
+          <!-- Agregados -->
         </div>
       </div>
     </aside>
